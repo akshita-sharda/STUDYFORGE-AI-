@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 export type User = {
   name: string;
@@ -13,9 +13,14 @@ export type User = {
 };
 export type Card = { question: string; answer: string; source_page?: number };
 export type Question = { id: string; question: string; options: string[] };
-export type Message = { role: "user" | "assistant"; text: string; grounded?: boolean };
+export type Message = {
+  role: "user" | "assistant";
+  text: string;
+  grounded?: boolean;
+  sources?: { page: number; excerpt: string; filename?: string; source_url?: string | null }[];
+};
 export type ProgressData = { xp: number; level: number; quizzes_completed: number; correct_answers: number };
-export type StudyDocument = { id: string; filename: string; created_at?: string };
+export type StudyDocument = { id: string; filename: string; source_url?: string | null; created_at?: string };
 export type QuizResult = {
   score: number;
   total: number;
@@ -24,7 +29,7 @@ export type QuizResult = {
 };
 export function Landing(p: any) {
   return (
-    <div className="landing">
+    <div className="landing" data-theme={p.theme || "light"}>
       <nav className="landing-nav">
         <div className="brand">
           <span className="brand-mark">S</span>
@@ -39,6 +44,9 @@ export function Landing(p: any) {
           <a href="#about">About</a>
         </div>
         <div className="nav-actions">
+          <button className="theme-toggle" onClick={p.toggleTheme} aria-pressed={p.theme === "dark"}>
+            <span aria-hidden="true">{p.theme === "dark" ? "☼" : "☾"}</span>{p.theme === "dark" ? "Light mode" : "Dark mode"}
+          </button>
           <button
             className="link-button"
             onClick={() => {
@@ -322,7 +330,45 @@ export function Setup(p: any) {
     </div>
   );
 }
-export function Overview({ user, notice, upload, setPage, generate, documents, selectedDocumentId, selectDocument }: any) {
+export function Profile({ user, theme, onSave, notice }: { user: User; theme: string; onSave: (values: { name: string; subjects: string[]; study_goal: string; explanation_style: string; difficulty: string }) => Promise<void>; notice: string }) {
+  const [name, setName] = useState(user.name);
+  const [subjects, setSubjects] = useState(user.subjects.join(", "));
+  const [goal, setGoal] = useState(user.study_goal);
+  const [style, setStyle] = useState(user.explanation_style);
+  const [difficulty, setDifficulty] = useState(user.difficulty);
+  const [saving, setSaving] = useState(false);
+  async function submit(event: FormEvent) {
+    event.preventDefault();
+    setSaving(true);
+    try {
+      await onSave({ name: name.trim(), subjects: subjects.split(",").map((item) => item.trim()).filter(Boolean), study_goal: goal.trim(), explanation_style: style, difficulty });
+    } finally { setSaving(false); }
+  }
+  return <section className="content-page profile-page">
+    <div className="page-heading" style={{ display: "block", maxWidth: 820, margin: "0 auto 24px" }}><span className="eyebrow">YOUR LEARNING, YOUR WAY</span><h1>My study profile</h1><p>Set up ASHIEY to match your subjects, goals, and the way you like to learn.</p></div>
+    <form className="profile-form" onSubmit={submit}>
+      <div className="profile-identity"><div className="profile-avatar">{name.trim().slice(0, 1).toUpperCase() || "S"}</div><div><strong>{name || "Student"}</strong><span>{user.email}</span></div><span className="profile-appearance">{theme === "dark" ? "☾ Dark pastel" : "☼ Light pastel"}</span></div>
+      <div className="profile-fields">
+        <label>Display name<input required minLength={2} maxLength={80} value={name} onChange={(event) => setName(event.target.value)} /></label>
+        <label>Subjects <small>Separate subjects with commas</small><input value={subjects} onChange={(event) => setSubjects(event.target.value)} placeholder="Biology, Data Science" /></label>
+        <label className="profile-wide">Study goal<textarea maxLength={500} rows={3} value={goal} onChange={(event) => setGoal(event.target.value)} placeholder="e.g. Prepare for my biology exam in three weeks" /></label>
+        <label>Explanation style<select value={style} onChange={(event) => setStyle(event.target.value)}><option value="simple">Simple and clear</option><option value="detailed">Detailed explanations</option><option value="example-based">Teach me with examples</option></select></label>
+        <label>Practice difficulty<select value={difficulty} onChange={(event) => setDifficulty(event.target.value)}><option value="easy">Gentle warm-up</option><option value="medium">Steady challenge</option><option value="hard">Exam-level challenge</option></select></label>
+      </div>
+      <div className="profile-footer"><p>{notice || "Your profile is private to your account. Appearance can be changed from the top bar."}</p><button className="button" type="submit" disabled={saving}>{saving ? "Saving…" : "Save my profile"}</button></div>
+    </form>
+  </section>;
+}
+
+export function Overview({ user, progress, notice, upload, setPage, generate, documents, selectedDocumentId, selectDocument, addWebsite, clearNotice }: any) {
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [addingWebsite, setAddingWebsite] = useState(false);
+  async function submitWebsite(event: FormEvent) {
+    event.preventDefault();
+    setAddingWebsite(true);
+    try { if (await addWebsite(websiteUrl.trim())) setWebsiteUrl(""); }
+    finally { setAddingWebsite(false); }
+  }
   return (
     <>
       <div className="page-heading">
@@ -345,27 +391,46 @@ export function Overview({ user, notice, upload, setPage, generate, documents, s
             Upload your notes and let ASHIEY turn them into a personal study
             path.
           </p>
-          <label className="button upload-button">
-            Upload material
-            <input
-              type="file"
-              accept="application/pdf"
-              onChange={(e) => upload(e.target.files?.[0])}
-            />
-          </label>
+          <div className="hero-actions">
+            <label className="button upload-button">
+              Upload material
+              <input
+                type="file"
+                accept="application/pdf"
+                onChange={(e) => upload(e.target.files?.[0])}
+              />
+            </label>
+            <button className="button quest-button" onClick={() => setPage("practice")}>Play a study quest</button>
+          </div>
+          <form className="website-source-form" onSubmit={submitWebsite}>
+            <label htmlFor="website-source-url">Or add a public website</label>
+            <div><input id="website-source-url" type="url" required maxLength={2048} placeholder="https://example.com/study-topic" value={websiteUrl} onChange={(event) => { setWebsiteUrl(event.target.value); clearNotice(); }} /><button className="button quest-button" type="submit" disabled={addingWebsite}>{addingWebsite ? "Reading page…" : "Add link →"}</button></div>
+            <small>ASHIEY indexes readable page text. Private, sign-in-only, and video pages aren’t supported.</small>
+          </form>
           {documents.length > 0 && <label className="document-picker">Current material<select value={selectedDocumentId} onChange={(event) => selectDocument(event.target.value)}>{documents.map((document: StudyDocument) => <option key={document.id} value={document.id}>{document.filename}</option>)}</select></label>}
           {notice && <small className="notice">{notice}</small>}
         </div>
-        <div className="hero-aside">
-          <span className="avatar-large">A</span>
-          <strong>ASHIEY</strong>
-          <small>Your AI study companion</small>
+        <div className="study-scene" role="img" aria-label="A three-dimensional study desk with a laptop, books, plant, and the ASHIEY tutor">
+          <div className="scene-window"><span className="scene-moon" /><span className="scene-window-cross" /></div>
+          <div className="scene-shelf" />
+          <div className="scene-desk">
+            <div className="scene-laptop">
+              <div className="laptop-screen"><span>A</span><i /><i /><i /></div>
+              <div className="laptop-base" />
+            </div>
+            <div className="scene-book book-one" />
+            <div className="scene-book book-two" />
+            <div className="scene-cup"><span /></div>
+            <div className="scene-plant"><i /><i /><i /><i /><span /></div>
+          </div>
+          <div className="ashiey-bot" aria-hidden="true"><i className="bot-antenna" /><div className="bot-head"><span /><span /><i /></div><i className="bot-ear" /></div>
+          <div className="scene-caption"><span /> ASHIEY <i>YOUR STUDY COMPANION</i></div>
         </div>
       </section>
       <section className="section-block">
         <div className="section-title">
-          <span className="eyebrow">YOUR STUDY TOOLS</span>
-          <h2>Choose your next step.</h2>
+          <span className="eyebrow">QUEST BOARD</span>
+          <h2>Choose your next quest.</h2>
         </div>
         <div className="dashboard-tools">
           <Action
@@ -400,22 +465,15 @@ export function Overview({ user, notice, upload, setPage, generate, documents, s
       </section>
       <section className="lower-grid">
         <div className="progress-card">
-          <span className="eyebrow">WEEKLY CONSISTENCY</span>
-          <h3>Your momentum is building.</h3>
-          <div className="bars">
-            {[35, 55, 42, 76, 61, 88, 50].map((h, i) => (
-              <i key={i} style={{ height: h + "%" }} />
-            ))}
+          <span className="eyebrow">YOUR PROGRESS</span>
+          <h3>Every small session counts.</h3>
+          <div className="snapshot-grid">
+            <div><strong>{progress.level}</strong><span>Level</span></div>
+            <div><strong>{progress.xp}</strong><span>XP earned</span></div>
+            <div><strong>{progress.quizzes_completed}</strong><span>Quizzes</span></div>
+            <div><strong>{progress.correct_answers}</strong><span>Correct</span></div>
           </div>
-          <div className="days">
-            <span>M</span>
-            <span>T</span>
-            <span>W</span>
-            <span>T</span>
-            <span>F</span>
-            <span>S</span>
-            <span>S</span>
-          </div>
+          <button className="quiet-link" onClick={() => setPage("progress")}>View all progress →</button>
         </div>
         <div className="recommendation">
           <span className="eyebrow">ASHIEY RECOMMENDS</span>
@@ -493,6 +551,18 @@ export function Chat({ question, setQuestion, ask, messages, notice }: any) {
               </span>
               <p>{m.text}</p>
               {m.grounded && <small>Source grounded</small>}
+              {m.sources?.length ? (
+                <details className="message-sources">
+                  <summary>
+                    Sources - {m.sources.map((source) => source.filename || `page ${source.page}`).join(", ")}
+                  </summary>
+                  {m.sources.map((source, sourceIndex) => (
+                    <p key={`${source.page}-${sourceIndex}`}>
+                      <strong>{source.filename || `Page ${source.page}`}</strong>{source.source_url && <> - <a href={source.source_url} target="_blank" rel="noreferrer">Open original page ↗</a></>}<br />{source.excerpt}
+                    </p>
+                  ))}
+                </details>
+              ) : null}
             </div>
           ))}
         </div>

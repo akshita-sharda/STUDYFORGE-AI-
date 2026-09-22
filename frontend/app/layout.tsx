@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import "./rebuild.css";
 import "./brown-overrides.css";
 import "./chat-polish.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "StudyForge AI | ASHIEY",

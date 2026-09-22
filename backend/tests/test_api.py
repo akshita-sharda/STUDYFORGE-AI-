@@ -2,6 +2,7 @@ import json
 from uuid import uuid4
 
 import fitz
+import pytest
 from fastapi.testclient import TestClient
 
 from app import main
@@ -53,6 +54,36 @@ def test_private_endpoints_require_login() -> None:
     assert client.post("/api/quizzes/generate", json={"document_id": "fake"}).status_code == 401
     assert client.post("/api/quizzes/fake/submit", json={"answers": {}}).status_code == 401
     assert client.get("/api/games/challenge/fake").status_code == 401
+    assert client.post("/api/documents/from-url", json={"url": "https://example.org"}).status_code == 401
+
+
+@pytest.mark.parametrize("url", ["file:///etc/passwd", "http://localhost/", "http://127.0.0.1/", "http://192.168.1.10/"])
+def test_website_import_rejects_non_public_urls(url: str) -> None:
+    with pytest.raises(main.HTTPException):
+        main.validate_public_url(url)
+
+
+def test_student_can_index_a_website_source(monkeypatch: pytest.MonkeyPatch) -> None:
+    user_id, _, headers = create_student("Web Source Student")
+    page_text = ("Photosynthesis converts sunlight, water, and carbon dioxide into glucose and oxygen. "
+                 "Chlorophyll captures light energy in the chloroplast. The light-dependent reactions "
+                 "produce ATP and NADPH, which power the Calvin cycle. " * 8)
+    monkeypatch.setattr(main, "validate_public_url", lambda _url: "https://example.org/biology/photosynthesis")
+    monkeypatch.setattr(main, "fetch_webpage", lambda _url: ("Photosynthesis guide", page_text, "https://example.org/biology/photosynthesis"))
+    try:
+        response = client.post("/api/documents/from-url", headers=headers, json={"url": "https://example.org/biology/photosynthesis"})
+        assert response.status_code == 200
+        source = response.json()
+        assert source["filename"].startswith("Web: Photosynthesis guide")
+        assert source["source_url"] == "https://example.org/biology/photosynthesis"
+        assert source["chunks"] > 0
+        assert client.get("/api/documents", headers=headers).json()[0]["source_url"] == source["source_url"]
+        answer = client.post("/api/chat", headers=headers, json={"question": "What does photosynthesis produce?", "document_id": source["document_id"]})
+        assert answer.status_code == 200
+        assert answer.json()["grounded"] is True
+        assert "glucose" in answer.json()["answer"]
+    finally:
+        remove_student(user_id)
 
 
 def test_frontend_port_can_call_auth_api() -> None:
@@ -79,10 +110,24 @@ def test_student_can_signup_and_save_preferences() -> None:
         preferences = client.put(
             "/api/profile/preferences",
             headers=headers,
-            json={"subjects": ["Data Science"], "study_goal": "Pass my exam", "theme": "brown"},
+            json={"name": "Updated Student", "subjects": ["Data Science"], "study_goal": "Pass my exam", "explanation_style": "example-based", "difficulty": "hard", "theme": "brown"},
         )
         assert preferences.status_code == 200
-        assert preferences.json()["user"]["theme"] == "brown"
+        saved_user = preferences.json()["user"]
+        assert saved_user["name"] == "Updated Student"
+        assert saved_user["subjects"] == ["Data Science"]
+        assert saved_user["study_goal"] == "Pass my exam"
+        assert saved_user["explanation_style"] == "example-based"
+        assert saved_user["difficulty"] == "hard"
+        assert saved_user["theme"] == "brown"
+        for theme in ("light", "dark"):
+            appearance = client.put(
+                "/api/profile/preferences",
+                headers=headers,
+                json={"theme": theme},
+            )
+            assert appearance.status_code == 200
+            assert appearance.json()["user"]["theme"] == theme
     finally:
         remove_student(user_id)
 
