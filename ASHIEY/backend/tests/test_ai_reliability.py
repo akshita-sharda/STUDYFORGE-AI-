@@ -98,3 +98,26 @@ def test_gemini_busy_fallback_is_bounded(monkeypatch):
     client.models.generate_content=limited
     with pytest.raises(Limited):main.generate_gemini_content(client,model="primary")
     assert calls == ["primary"]
+
+
+def test_study_items_keep_distinct_concepts_and_add_focus():
+    items = [
+        {"question": "What is virtual memory?", "answer": "It maps virtual addresses to physical memory."},
+        {"question": "Explain the meaning of virtual memory.", "answer": "It maps virtual addresses to physical memory."},
+        {"question": "How does a page fault change program execution?", "answer": "The operating system loads the required page before continuing."},
+    ]
+    kept = main.keep_distinct_study_items(items, 3, quiz=False)
+    assert len(kept) == 2
+    assert kept[0]["focus"]
+    assert kept[1]["question"].startswith("How does a page fault")
+
+
+def test_quiz_items_keep_distinct_concepts_after_storage_formatting():
+    items = [
+        {"question": "What is a process?", "answer": "A running program.", "options": ["A running program", "A compiler", "A file", "A thread"], "explanation": "A process is a program in execution."},
+        {"question": "Define a process in an operating system.", "answer": "A running program.", "options": ["A running program", "A compiler", "A file", "A thread"], "explanation": "A process is a program in execution."},
+        {"question": "What is the purpose of a scheduler?", "answer": "It selects the next process to run.", "options": ["It selects the next process to run.", "It writes source code", "It stores files", "It encrypts memory"], "explanation": "Scheduling allocates CPU time."},
+    ]
+    kept = main.keep_distinct_study_items(items, 3, quiz=True)
+    assert len(kept) == 2
+    assert all(item["focus"] for item in kept)
