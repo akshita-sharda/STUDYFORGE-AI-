@@ -733,11 +733,23 @@ def generate_document_items(document_id, count, quiz=False):
 
 
 def ask_gemini_flashcards(document_id: str, count: int):
-    return generate_document_items(document_id, count)
+    try:
+        return generate_document_items(document_id, count)
+    except HTTPException as exc:
+        # Study tools can still use the text already extracted from the PDF.
+        # A provider outage should not make those tools unusable.
+        if exc.status_code == 503:
+            return None
+        raise
 
 
 def ask_gemini_quiz(document_id: str, count: int):
-    return generate_document_items(document_id, count, quiz=True)
+    try:
+        return generate_document_items(document_id, count, quiz=True)
+    except HTTPException as exc:
+        if exc.status_code == 503:
+            return None
+        raise
 
 
 def fallback_answer(sources: list[dict]) -> str:
@@ -776,6 +788,50 @@ def make_flashcards(document_id: str, count: int) -> list[dict]:
         focus = focus_from_question(answer)
         cards.append({"question": question_stems[len(cards) % len(question_stems)].format(focus=focus), "answer": answer, "source_page": chunk["page"], "focus": focus})
     return keep_distinct_study_items(cards, count, quiz=False)
+
+
+def make_local_quiz(document_id: str, count: int) -> list[dict]:
+    """Build a source-grounded quiz when the AI provider cannot respond."""
+    candidates = []
+    for chunk in source_chunks(document_id):
+        for sentence in re.split(r"(?<=[.!?])\s+", chunk["text"]):
+            sentence = re.sub(r"^.*?\bPage\s+\d+\s+of\s+\d+\s*", "", sentence, flags=re.IGNORECASE).strip(" -|\t")
+            words = study_words(sentence)
+            if (5 <= len(words) <= 38 and len(sentence) <= 260
+                    and sentence.count("|") < 2 and not sentence.startswith("+")
+                    and not re.fullmatch(r"(?:[A-Z][A-Z ]*|\d+)\.?", sentence)):
+                label = re.match(r"(?:-\s*)?([^:]{2,48}):", sentence)
+                focus = label.group(1).strip().title() if label else focus_from_question(sentence)
+                candidates.append({"sentence": sentence, "page": chunk["page"], "focus": focus})
+
+    unique = []
+    for candidate in candidates:
+        if not any(study_text_is_similar(candidate["sentence"], saved["sentence"]) for saved in unique):
+            unique.append(candidate)
+
+    questions = []
+    for index, candidate in enumerate(unique):
+        distractors = []
+        for alternative in unique[index + 1:] + unique[:index]:
+            if alternative["page"] == candidate["page"] or study_text_is_similar(candidate["sentence"], alternative["sentence"]):
+                continue
+            distractors.append(alternative["sentence"])
+            if len(distractors) == 3:
+                break
+        if len(distractors) != 3:
+            continue
+        options = [candidate["sentence"], *distractors]
+        rotation = index % len(options)
+        options = options[rotation:] + options[:rotation]
+        questions.append({
+            "question": f"What does this material say about {candidate['focus']}?",
+            "options": options,
+            "answer": candidate["sentence"],
+            "explanation": f"This is stated on page {candidate['page']} of your study material.",
+            "source_page": candidate["page"],
+            "focus": candidate["focus"],
+        })
+    return keep_distinct_study_items(questions, count, quiz=True)
 
 @app.get("/health")
 
@@ -1161,7 +1217,9 @@ def generate_quiz(request:GenerateRequest,user=Depends(current_user)):
     owned_document(request.document_id,user)
     questions=keep_distinct_study_items(ask_gemini_quiz(request.document_id,request.count) or [],request.count,quiz=True)
     if not questions:
-        raise HTTPException(503,"A useful quiz could not be generated. Try again, or practise in Ask ASHIEY with this document.")
+        questions=make_local_quiz(request.document_id,request.count)
+    if not questions:
+        raise HTTPException(422,"No distinct quiz questions could be made from this material. Try a more detailed PDF or use Ask ASHIEY to study it.")
     questions=[dict(id=str(index+1),question=item["question"],options=item["options"],answer=item.get("answer",item.get("correct_answer")),explanation=item["explanation"],source_page=item.get("source_page"),focus=item["focus"]) for index,item in enumerate(questions)]
     quiz_id=str(uuid4())
     with db_connection() as db:

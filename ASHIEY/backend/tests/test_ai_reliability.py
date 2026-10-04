@@ -121,3 +121,15 @@ def test_quiz_items_keep_distinct_concepts_after_storage_formatting():
     kept = main.keep_distinct_study_items(items, 3, quiz=True)
     assert len(kept) == 2
     assert all(item["focus"] for item in kept)
+
+
+def test_local_quiz_is_available_when_provider_is_busy(monkeypatch):
+    monkeypatch.setattr(main, "source_chunks", lambda document_id: [
+        {"page": 1, "text": "A process is a program that is currently executing. The scheduler chooses which ready process receives CPU time next."},
+        {"page": 2, "text": "Virtual memory gives each process a separate address space. A page fault occurs when a required page is not in physical memory."},
+        {"page": 3, "text": "Deadlock happens when processes wait indefinitely for resources. Context switching saves one process state before another process runs."},
+    ])
+    questions = main.make_local_quiz("notes", 3)
+    assert len(questions) == 3
+    assert all(question["answer"] in question["options"] for question in questions)
+    assert len({question["focus"] for question in questions}) == len(questions)
