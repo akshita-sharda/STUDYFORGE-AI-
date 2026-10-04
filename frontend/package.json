@@ -7,13 +7,19 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "15.5.0",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "katex": "^0.18.9",
+    "next": "^15.5.26",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.0",
-    "@types/react": "^19.3.0",
-    "typescript": "^5.9.3"
+    "@playwright/test": "^1.63.0",
+    "typescript": "^6.0.3"
   }
 }
