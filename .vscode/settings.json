@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/data/**": true,
+    "**/vector_store/**": true,
+    "**/public/**": true,
+    "**/*.md": true,
+    "**/*.db": true,
+    "**/*.pdf": true,
+    "**/.env": true,
+    "**/.env.local": true
+  },
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/data/**": true,
+    "**/vector_store/**": true,
+    "**/public/**": true
+  }
+}
