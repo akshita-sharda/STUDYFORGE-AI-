@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#c9bfff","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#004881","on-secondary-fixed-variant":"#00513a","on-tertiary-fixed":"#001c38","tertiary-container":"#3b75b6","on-background":"#1c1a27","surface-bright":"#fcf8ff","on-error-container":"#93000a","secondary-container":"#a7f2d0","tertiary-fixed-dim":"#a2c9ff","secondary-fixed":"#a7f2d0","inverse-on-surface":"#f4eeff","tertiary-fixed":"#d3e4ff","surface-variant":"#e5e0f3","on-secondary":"#ffffff","inverse-surface":"#312f3d","on-primary-fixed-variant":"#473698","error":"#ba1a1a","primary-container":"#7364c7","on-primary-container":"#fcf7ff","on-primary":"#ffffff","primary":"#5a4bac","secondary":"#1c6b50","on-surface-variant":"#484552","outline-variant":"#c9c4d4","surface-tint":"#5f4fb1","surface-container-high":"#ebe5f9","surface-container-low":"#f7f1ff","on-tertiary-container":"#f8f9ff","on-secondary-fixed":"#002115","on-error":"#ffffff","background":"#fcf8ff","secondary-fixed-dim":"#8bd5b5","on-surface":"#1c1a27","on-secondary-container":"#247156","surface-dim":"#dcd7ea","primary-fixed":"#e5deff","surface-container-lowest":"#ffffff","inverse-primary":"#c9bfff","error-container":"#ffdad6","on-primary-fixed":"#1a0063","surface-container":"#f1ebff","tertiary":"#1a5c9b","surface-container-highest":"#e5e0f3","outline":"#797583","surface":"#fcf8ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","margin":"2.5rem"},"fontFamily":{"code-inline":["JetBrains Mono"],"body-md":["Geist"],"headline-lg":["Geist"],"code-block":["JetBrains Mono"],"headline-md":["Geist"],"label-sm":["JetBrains Mono"],"headline-sm":["Geist"],"display":["Geist"],"label-md":["JetBrains Mono"],"body-lg":["Geist"],"body-sm":["Geist"],"headline-lg-mobile":["Geist"]},"fontSize":{"code-inline":["0.875rem",{"lineHeight":"1.4","letterSpacing":"-0.01em","fontWeight":"400"}],"body-md":["0.9375rem",{"lineHeight":"1.55","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg":["2.25rem",{"lineHeight":"1.2","letterSpacing":"-0.025em","fontWeight":"600"}],"code-block":["0.8125rem",{"lineHeight":"1.6","letterSpacing":"0","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.3","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"1.2","letterSpacing":"0.06em","fontWeight":"500"}],"headline-sm":["1.25rem",{"lineHeight":"1.4","letterSpacing":"-0.015em","fontWeight":"500"}],"display":["3rem",{"lineHeight":"1.15","letterSpacing":"-0.03em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.6","letterSpacing":"-0.01em","fontWeight":"400"}],"body-sm":["0.8125rem",{"lineHeight":"1.5","letterSpacing":"0","fontWeight":"400"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"1.25","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 max-w-[1200px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm shrink-0"><img alt="ASHIEY Companion Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xu5aIzMDWP0j8uXwVyrgxd5wpt6RtM9zpdYmze3U4qdvw4k46sbT_kyqMYlIKvEnKBMP07Qmjm3Qu-tuOjXyMJ0ZI7-CbkBvG8-9TbBLpbDM8fK81dkHfmXJOI3BJshEppBdDNQBjRL2KU-uuYHwbHRuy7XEOYZl0FTObLh_8wukcyHa25fsoQd7aPCGndOblgfLVKfmOqVerjac3QBT9v1TKAbthxVK78P7UuTn673gb5T9rVnzu8G7S3"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">StudyForge AI</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed tracking-wider uppercase">ASHIEY</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">BTech CS Academic Workspace</span></div></div><nav class="hidden md:flex items-center p-1 rounded-full bg-surface-container-low shadow-[0_1px_3px_rgba(41,39,53,0.03)]" data-active-classes="bg-primary text-on-primary font-medium"><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="ask-ashiey" href="#">Ask ASHIEY</a><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="planner" href="#">Planner</a><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="library" href="#">Library</a><div class="relative group"><button aria-expanded="false" aria-haspopup="true" class="h-9 px-3.5 flex items-center gap-1 rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" type="button"><span>Study Tools</span><span class="material-symbols-outlined text-[18px]">expand_more</span></button><div class="absolute left-0 top-full mt-2 w-56 p-1.5 rounded-xl bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(41,39,53,0.12),0_4px_12px_-2px_rgba(41,39,53,0.04)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 z-50"><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="flashcards" href="#">Flashcards</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="practice-quizzes" href="#">Practice Quizzes</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="revision-tracker" href="#">Revision Tracker</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="progress-analytics" href="#">Progress Analytics</a></div></div></nav><div class="flex items-center gap-space-sm shrink-0"><button aria-label="Toggle Light and Dark Mode" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">routine</span></button><div class="relative group"><button aria-expanded="false" aria-haspopup="true" class="flex items-center p-0.5 rounded-full hover:ring-2 hover:ring-primary-container/30 transition-all" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARhpAh-iMsLiqCmR6vA5J3SSrxMevbUfhOJs1291rwm8Hbnxd60orj2QHK0AUv3a3vyTBjYE-gfFD0-Pr2yJdQ6_bayCK5fHX0dSsrnOZBcejrf5L3204VH8NHomFSRYG_mWO56_FlyfOHIoeW2kAqRMgbpDiFjXG2jyP1JhW6irC8uwbrfyF411F48ivaMwbyYIfco-g7mHYWlG1QLk0vTsYI9nYC_jwk6r57BJ4iYKR-etJxfq0qew"/></button><div class="absolute right-0 top-full mt-2 w-48 p-1.5 rounded-xl bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(41,39,53,0.12),0_4px_12px_-2px_rgba(41,39,53,0.04)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 z-50"><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="my-profile" href="#">My Profile</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="edit-avatar" href="#">Edit Avatar</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="preferences" href="#">Preferences</a><div class="h-[1px] bg-surface-container-high my-1"></div><a class="flex items-center px-3 py-2 rounded-lg text-error hover:bg-error-container/20 font-body-md text-body-sm transition-colors" data-path="login" href="#">Sign Out</a></div></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="max-w-[1200px] mx-auto px-gutter"><div class="flex flex-col w-full pb-16">
+<!-- Top Breadcrumb & Metadata Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pt-space-lg pb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Profile Configuration</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Identity Studio</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight">Avatar Creator</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Customise your personal student identity across StudyForge AI</p>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="h-9 px-4 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-body-md text-body-sm transition-all duration-150 flex items-center gap-1.5 shadow-sm active:scale-95" id="btn-reset" type="button">
+<span class="material-symbols-outlined text-[17px]">restart_alt</span>
+<span>Reset</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-body-md text-body-sm transition-all duration-150 flex items-center gap-1.5 shadow-sm active:scale-95" id="btn-randomise" type="button">
+<span class="material-symbols-outlined text-[17px]">shuffle</span>
+<span>Randomise</span>
+</button>
+<button class="h-9 px-5 rounded-full bg-primary hover:bg-primary/90 text-on-primary font-body-md text-body-sm transition-all duration-150 flex items-center gap-1.5 shadow-md active:scale-95 shadow-primary/20" id="btn-save-header" type="button">
+<span class="material-symbols-outlined text-[17px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>Save Avatar</span>
+</button>
+</div>
+</div>
+<!-- Studio Workspace Canvas Split (Desktop 440px sticky left column + right customisation stack) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Sticky Live Preview Canvas -->
+<div class="lg:col-span-5 xl:col-span-4 lg:sticky lg:top-20 z-20 flex flex-col gap-space-md">
+<!-- Main Visual Stage Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_rgba(41,39,53,0.03),0_4px_12px_rgba(41,39,53,0.02)] flex flex-col items-center text-center relative overflow-hidden group">
+<!-- Live Badge Tag -->
+<div class="w-full flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Live Stage</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-inline">SVG 1024×1024</span>
+</div>
+<!-- Render Target Viewport with Dynamic Tone Canvas -->
+<div class="relative w-full aspect-square max-w-[340px] rounded-2xl bg-[#F4EEFA] flex items-center justify-center p-4 transition-colors duration-300 shadow-inner" id="avatar-backdrop">
+<div class="relative w-full h-full rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
+<img alt="Avatar Visual Studio preview" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" id="avatar-preview-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARhpAh-iMsLiqCmR6vA5J3SSrxMevbUfhOJs1291rwm8Hbnxd60orj2QHK0AUv3a3vyTBjYE-gfFD0-Pr2yJdQ6_bayCK5fHX0dSsrnOZBcejrf5L3204VH8NHomFSRYG_mWO56_FlyfOHIoeW2kAqRMgbpDiFjXG2jyP1JhW6irC8uwbrfyF411F48ivaMwbyYIfco-g7mHYWlG1QLk0vTsYI9nYC_jwk6r57BJ4iYKR-etJxfq0qew"/>
+</div>
+<!-- Micro Quick Status Orb -->
+<div class="absolute bottom-6 right-6 w-5 h-5 rounded-full bg-secondary ring-4 ring-surface-container-lowest flex items-center justify-center shadow-sm" title="Active on Campus Grid">
+<span class="material-symbols-outlined text-[12px] text-white" style="font-variation-settings: 'FILL' 1;">done</span>
+</div>
+</div>
+<!-- Canvas Background Shade Tuner -->
+<div class="mt-space-md flex flex-col items-center gap-2 w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Background Tone</span>
+<div class="flex items-center gap-2.5 p-1 rounded-full bg-surface-container-low shadow-sm" id="bg-selector">
+<button aria-label="Pastel Lavender" class="tone-btn w-6 h-6 rounded-full bg-[#EBDDF9] scale-110 shadow-sm transition-transform focus:outline-none" data-color="#F4EEFA" type="button"></button>
+<button aria-label="Sage Mint" class="tone-btn w-6 h-6 rounded-full bg-[#D4F1E5] hover:scale-110 transition-transform focus:outline-none" data-color="#E8F5F0" type="button"></button>
+<button aria-label="Warm Ivory" class="tone-btn w-6 h-6 rounded-full bg-[#F3EDE2] hover:scale-110 transition-transform focus:outline-none" data-color="#FAF8F5" type="button"></button>
+<button aria-label="Powder Blue" class="tone-btn w-6 h-6 rounded-full bg-[#D7E8FA] hover:scale-110 transition-transform focus:outline-none" data-color="#EBF3FC" type="button"></button>
+<button aria-label="Soft Peach" class="tone-btn w-6 h-6 rounded-full bg-[#FADBD2] hover:scale-110 transition-transform focus:outline-none" data-color="#FDF0EC" type="button"></button>
+</div>
+</div>
+<!-- Student Persona Identity Strip -->
+<div class="mt-space-md pt-space-md w-full bg-surface-container-low rounded-lg p-3 flex flex-col items-center">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface" id="student-name-display">Aryan Sharma</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-0.5">BTech CSE • Semester 5 • Section A</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-inline">ID: CS22B104</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant">AI Co-pilot Synced</span>
+</div>
+</div>
+<!-- Contextual Transparency Advisory -->
+<div class="mt-space-sm p-2.5 rounded-lg bg-surface-container-high/60 flex items-start gap-2 text-left">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Your configured avatar seamlessly propagates to top navigation badges, peer review submissions, peer pair coding, and shared study rooms.
+          </p>
+</div>
+</div>
+<!-- Compact Quick Sync Stats -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_rgba(41,39,53,0.03)] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Cloud Asset Cache</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Version 4.12 • Synced 2m ago</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface-variant font-code-inline">Clean Vector</span>
+</div>
+</div>
+<!-- RIGHT COLUMN: Highly Refined Customisation Modules -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Panel 1: Identity & Starting Points -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_rgba(41,39,53,0.03),0_4px_12px_rgba(41,39,53,0.02)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-semibold font-label-md text-label-md">01</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Identity & Starting Points</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set your foundational workspace expression</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary px-2.5 py-1 rounded-full bg-secondary-fixed">Inclusive Framework</span>
+</div>
+<!-- Optional Gender Field -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Gender Identity (Optional)</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Self-determined</span>
+</div>
+<!-- Explicit Clear Disclaimer -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center gap-2.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">shield</span>
+<p class="font-body-sm text-body-sm leading-snug">
+              Optional. Gender is not linked to appearance options, computational rights, or your academic profile records.
+            </p>
+</div>
+<!-- Gender Choice Buttons -->
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-1" id="gender-group">
+<button class="gender-pill h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm transition-all duration-150 flex items-center justify-center text-center" type="button">Woman</button>
+<button class="gender-pill h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm transition-all duration-150 flex items-center justify-center text-center" type="button">Man</button>
+<button class="gender-pill h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm transition-all duration-150 flex items-center justify-center text-center" type="button">Non-binary</button>
+<button class="gender-pill h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm transition-all duration-150 flex items-center justify-center text-center" type="button">Self-describe</button>
+<button class="gender-pill active h-9 px-2 rounded-lg bg-primary text-on-primary font-body-md text-body-sm font-medium transition-all duration-150 flex items-center justify-center text-center shadow-sm" type="button">Prefer not to say</button>
+</div>
+</div>
+<!-- Appearance Starting Presets -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Starting Presentation Baseline</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-inline">3 Archetypes</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Starting points only; freely mix and customize everything below without constraints.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mt-1" id="preset-group">
+<button class="preset-card p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all duration-150 flex items-center gap-3" type="button">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Feminine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soft contouring</span>
+</div>
+</button>
+<button class="preset-card p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all duration-150 flex items-center gap-3" type="button">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Masculine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Defined angles</span>
+</div>
+</button>
+<button class="preset-card active p-3 rounded-xl bg-primary-fixed text-on-primary-fixed text-left transition-all duration-150 flex items-center gap-3 shadow-sm" type="button">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">magic_button</span>
+</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-sm font-semibold text-on-primary-fixed">Androgynous</span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant">Balanced harmonic</span>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- Panel 2: Face & Features -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_rgba(41,39,53,0.03),0_4px_12px_rgba(41,39,53,0.02)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-semibold font-label-md text-label-md">02</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Face & Features</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complexion, bone structure, and expression nuance</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-inline">Fitzpatrick Scale 1-6</span>
+</div>
+<!-- Skin Tone Swatches -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Skin Tone & Undertone</label>
+<span class="font-label-sm text-label-sm text-primary font-medium" id="selected-skintone-name">Porcelain Warm</span>
+</div>
+<div class="grid grid-cols-4 sm:grid-cols-8 gap-2 pt-1" id="skin-tones">
+<button aria-label="Porcelain Warm tone" class="skintone-btn relative aspect-square rounded-xl bg-[#F6ECE2] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 scale-105 ring-2 ring-primary" data-name="Porcelain Warm" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">check</span>
+</button>
+<button aria-label="Fair Ivory tone" class="skintone-btn relative aspect-square rounded-xl bg-[#EEDDCF] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Fair Ivory" type="button">
+</button>
+<button aria-label="Almond Sand tone" class="skintone-btn relative aspect-square rounded-xl bg-[#E4C8B2] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Almond Sand" type="button">
+</button>
+<button aria-label="Golden Olive tone" class="skintone-btn relative aspect-square rounded-xl bg-[#D5AB8C] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Golden Olive" type="button">
+</button>
+<button aria-label="Caramel Bronze tone" class="skintone-btn relative aspect-square rounded-xl bg-[#BA8764] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Caramel Bronze" type="button">
+</button>
+<button aria-label="Umber Chestnut tone" class="skintone-btn relative aspect-square rounded-xl bg-[#965E3E] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Umber Chestnut" type="button">
+</button>
+<button aria-label="Deep Espresso tone" class="skintone-btn relative aspect-square rounded-xl bg-[#673F28] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Deep Espresso" type="button">
+</button>
+<button aria-label="Rich Obsidian tone" class="skintone-btn relative aspect-square rounded-xl bg-[#3B2519] flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95 hover:scale-105" data-name="Rich Obsidian" type="button">
+</button>
+</div>
+</div>
+<!-- Face Shape & Eyebrow Style (Side by Side Grid) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-2">
+<!-- Face Shape -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Face Shape</label>
+<div class="grid grid-cols-3 gap-1.5" id="face-shape-group">
+<button class="shape-btn active h-9 px-2 rounded-lg bg-primary text-on-primary font-body-md text-body-sm font-medium" type="button">Oval</button>
+<button class="shape-btn h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Square</button>
+<button class="shape-btn h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Round</button>
+<button class="shape-btn h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Heart</button>
+<button class="shape-btn h-9 px-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm col-span-2" type="button">Angular</button>
+</div>
+</div>
+<!-- Eyebrow Style -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Eyebrow Style</label>
+<div class="grid grid-cols-2 gap-1.5" id="eyebrow-group">
+<button class="brow-btn active h-9 px-3 rounded-lg bg-primary text-on-primary font-body-md text-body-sm font-medium" type="button">Natural</button>
+<button class="brow-btn h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Arched</button>
+<button class="brow-btn h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Thick</button>
+<button class="brow-btn h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Soft</button>
+</div>
+</div>
+</div>
+<!-- Subtle Expression Selector -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Subtle Expression</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="expression-group">
+<button class="expr-btn active p-3 rounded-xl bg-primary-fixed text-on-primary-fixed flex flex-col items-center gap-1 shadow-sm text-center" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">sentiment_satisfied</span>
+<span class="font-body-md text-body-sm font-semibold">Friendly Smile</span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant">Approachable</span>
+</button>
+<button class="expr-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Focused Academic</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Deep study mode</span>
+</button>
+<button class="expr-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Thoughtful</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reflective curiosity</span>
+</button>
+<button class="expr-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">award_star</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Confident</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam ready</span>
+</button>
+</div>
+</div>
+<!-- Facial Hair -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Facial Hair</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="facial-hair-group">
+<button class="hair-facial-btn active h-9 rounded-lg bg-primary text-on-primary font-body-md text-body-sm font-medium" type="button">None</button>
+<button class="hair-facial-btn h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Stubble</button>
+<button class="hair-facial-btn h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Goatee</button>
+<button class="hair-facial-btn h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm" type="button">Full Beard</button>
+</div>
+</div>
+</section>
+<!-- Panel 3: Hairstyle & Color -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_rgba(41,39,53,0.03),0_4px_12px_rgba(41,39,53,0.02)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-semibold font-label-md text-label-md">03</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Hairstyle & Color</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Textures, lengths, and chromatic dyes</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-inline">8 Textures</span>
+</div>
+<!-- Hairstyle Selector Grid with Visual Icons -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Style & Texture</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="hairstyle-group">
+<button class="style-card active p-2.5 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center gap-2 text-left shadow-sm" type="button">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">face</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Short crop</span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant">Clean taper</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">face_3</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Wavy Bob</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Shoulder rest</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">face_4</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Long waves</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cascading</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">face_6</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Curly afro</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">High volume</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">face_2</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Coily fades</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Structured</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">face_5</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Braids</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Intricate lines</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Ponytail</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tied-back</span>
+</div>
+</button>
+<button class="style-card p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 text-left transition-colors" type="button">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-sm font-semibold truncate">Bald / Shaved</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bare profile</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Hair Color Chips -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Hair Pigment</label>
+<span class="font-label-sm text-label-sm text-primary font-medium" id="selected-hair-color">Espresso Brown</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-6 gap-2" id="hair-color-group">
+<button class="hair-color-pill active h-10 px-3 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center gap-2 shadow-sm" data-color-name="Espresso Brown" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-[#362217] shrink-0"></span>
+<span class="font-body-md text-body-sm font-semibold truncate">Espresso</span>
+</button>
+<button class="hair-color-pill h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors" data-color-name="Jet Black" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-[#18181A] shrink-0"></span>
+<span class="font-body-md text-body-sm font-medium truncate">Jet Black</span>
+</button>
+<button class="hair-color-pill h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors" data-color-name="Auburn" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-[#7C3626] shrink-0"></span>
+<span class="font-body-md text-body-sm font-medium truncate">Auburn</span>
+</button>
+<button class="hair-color-pill h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors" data-color-name="Chestnut" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-[#5D3825] shrink-0"></span>
+<span class="font-body-md text-body-sm font-medium truncate">Chestnut</span>
+</button>
+<button class="hair-color-pill h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors" data-color-name="Silver Grey" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-[#9E9BA6] shrink-0"></span>
+<span class="font-body-md text-body-sm font-medium truncate">Silver Grey</span>
+</button>
+<button class="hair-color-pill h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors" data-color-name="Lavender Tint" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-[#A594F9] shrink-0"></span>
+<span class="font-body-md text-body-sm font-medium truncate">Lavender</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Panel 4: Clothing & Accessories -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_rgba(41,39,53,0.03),0_4px_12px_rgba(41,39,53,0.02)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-semibold font-label-md text-label-md">04</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Clothing & Accessories</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Apparel, academic eyewear, and cultural headwear</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-inline">Campus Casual</span>
+</div>
+<!-- Outfits Selection -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Study Attire</label>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="outfit-group">
+<button class="outfit-btn active p-3 rounded-xl bg-primary-fixed text-on-primary-fixed flex flex-col items-center gap-1.5 shadow-sm text-center" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">dry_cleaning</span>
+<span class="font-body-md text-body-sm font-semibold">Minimal Hoodie</span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant">Lavender</span>
+</button>
+<button class="outfit-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1.5 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">checkroom</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Oxford Shirt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pressed Cotton</span>
+</button>
+<button class="outfit-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1.5 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">styler</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Denim Jacket</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Indigo Wash</span>
+</button>
+<button class="outfit-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1.5 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">apparel</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Crewneck</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sweatshirt</span>
+</button>
+<button class="outfit-btn p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center gap-1.5 text-center transition-colors col-span-2 sm:col-span-1" type="button">
+<span class="material-symbols-outlined text-[20px]">business_center</span>
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Blazer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Formal Viva</span>
+</button>
+</div>
+</div>
+<!-- Eyewear Options -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Spectacles & Eyewear</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="glasses-group">
+<button class="glasses-btn active h-11 px-3 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center gap-2 shadow-sm font-body-md text-body-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">eyeglasses</span>
+<span class="truncate">Subtle Round Silver</span>
+</button>
+<button class="glasses-btn h-11 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors font-body-md text-body-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">eyeglasses</span>
+<span class="truncate">Horn-rim Rect</span>
+</button>
+<button class="glasses-btn h-11 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors font-body-md text-body-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">eyeglasses</span>
+<span class="truncate">Wire Aviator</span>
+</button>
+<button class="glasses-btn h-11 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center gap-2 transition-colors font-body-md text-body-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">block</span>
+<span class="truncate">None</span>
+</button>
+</div>
+</div>
+<!-- Headwear (Inclusive/Cultural) -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Headwear & Coverings</label>
+<span class="font-label-sm text-label-sm text-secondary">Inclusive</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="headwear-group">
+<button class="headwear-btn active h-10 px-3 rounded-xl bg-primary text-on-primary font-body-md text-body-sm font-medium flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span>None</span>
+</button>
+<button class="headwear-btn h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">skateboarding</span>
+<span>Beanie</span>
+</button>
+<button class="headwear-btn h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">sports_baseball</span>
+<span>Cap</span>
+</button>
+<button class="headwear-btn h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-md text-body-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">face_4</span>
+<span>Headscarf / Hijab</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- STICKY BOTTOM SAVE ACTION BAR -->
+<aside aria-label="Save changes notification" class="sticky bottom-4 z-40 mt-space-xl w-full">
+<div class="bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl p-4 shadow-[0_12px_32px_-4px_rgba(41,39,53,0.12),0_4px_12px_-2px_rgba(41,39,53,0.04)] flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Unsaved Changes Prompt -->
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Unsaved Customisations</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Changes will sync to your BTech CSE cohort credentials and AI chats</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="h-10 px-5 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-body-md text-body-sm transition-all duration-150" id="btn-cancel" type="button">
+          Cancel
+        </button>
+<button class="h-10 px-6 rounded-full bg-primary hover:bg-primary/90 text-on-primary font-body-md text-body-sm font-semibold transition-all duration-150 shadow-md shadow-primary/25 flex items-center gap-2 active:scale-98" id="btn-apply-save" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Save & Apply to Profile</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-20 right-6 z-50 transform translate-y-8 opacity-0 pointer-events-none transition-all duration-300 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5" id="toast-notification">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-sm font-medium" id="toast-text">Avatar saved to StudyForge profile successfully.</span>
+</div>
+</div>
+<script>
+  (function initAvatarStudio() {
+    // Background Tone Switching
+    const bgContainer = document.getElementById('avatar-backdrop');
+    const toneButtons = document.querySelectorAll('.tone-btn');
+
+    toneButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        toneButtons.forEach(b => {
+          b.classList.remove('scale-110');
+          b.classList.add('hover:scale-110');
+        });
+        btn.classList.remove('hover:scale-110');
+        btn.classList.add('scale-110');
+        const color = btn.getAttribute('data-color');
+        if (bgContainer && color) {
+          bgContainer.style.backgroundColor = color;
+        }
+      });
+    });
+
+    // Universal Helper for Pill Selection Groups
+    function setupGroup(containerId, activeClassList, inactiveClassList, onChange) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const items = container.querySelectorAll('button');
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          items.forEach(other => {
+            other.classList.remove(...activeClassList);
+            other.classList.add(...inactiveClassList);
+          });
+          item.classList.remove(...inactiveClassList);
+          item.classList.add(...activeClassList);
+          if (onChange) onChange(item);
+        });
+      });
+    }
+
+    // Gender Group
+    setupGroup('gender-group',
+      ['bg-primary', 'text-on-primary', 'font-medium', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Starting Preset Group
+    setupGroup('preset-group',
+      ['bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Skin Tone Group
+    const skinToneBtns = document.querySelectorAll('.skintone-btn');
+    const skinToneLabel = document.getElementById('selected-skintone-name');
+    skinToneBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        skinToneBtns.forEach(b => {
+          b.classList.remove('ring-2', 'ring-primary', 'scale-105');
+          b.innerHTML = '';
+        });
+        btn.classList.add('ring-2', 'ring-primary', 'scale-105');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-on-surface-variant">check</span>';
+        if (skinToneLabel) {
+          skinToneLabel.textContent = btn.getAttribute('data-name');
+        }
+      });
+    });
+
+    // Face Shape Group
+    setupGroup('face-shape-group',
+      ['bg-primary', 'text-on-primary', 'font-medium'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Eyebrows Group
+    setupGroup('eyebrow-group',
+      ['bg-primary', 'text-on-primary', 'font-medium'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Expressions Group
+    setupGroup('expression-group',
+      ['bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Facial Hair Group
+    setupGroup('facial-hair-group',
+      ['bg-primary', 'text-on-primary', 'font-medium'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Hairstyle Group
+    setupGroup('hairstyle-group',
+      ['bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface']
+    );
+
+    // Hair Pigment Group
+    const hairLabel = document.getElementById('selected-hair-color');
+    setupGroup('hair-color-group',
+      ['bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant'],
+      (btn) => {
+        if (hairLabel && btn.dataset.colorName) {
+          hairLabel.textContent = btn.dataset.colorName;
+        }
+      }
+    );
+
+    // Outfits Group
+    setupGroup('outfit-group',
+      ['bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Glasses Group
+    setupGroup('glasses-group',
+      ['bg-primary-fixed', 'text-on-primary-fixed', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Headwear Group
+    setupGroup('headwear-group',
+      ['bg-primary', 'text-on-primary', 'font-medium', 'shadow-sm'],
+      ['bg-surface-container-low', 'hover:bg-surface-container', 'text-on-surface-variant']
+    );
+
+    // Toast Notification System
+    const toast = document.getElementById('toast-notification');
+    const toastText = document.getElementById('toast-text');
+    let toastTimeout;
+
+    function showToast(message) {
+      if (!toast) return;
+      if (toastText) toastText.textContent = message;
+      clearTimeout(toastTimeout);
+      toast.classList.remove('translate-y-8', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-8', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    // Save buttons interaction
+    const saveHeaderBtn = document.getElementById('btn-save-header');
+    const saveBottomBtn = document.getElementById('btn-apply-save');
+    const cancelBtn = document.getElementById('btn-cancel');
+    const resetBtn = document.getElementById('btn-reset');
+    const randomiseBtn = document.getElementById('btn-randomise');
+
+    if (saveHeaderBtn) {
+      saveHeaderBtn.addEventListener('click', () => showToast("Avatar updated across StudyForge AI services."));
+    }
+    if (saveBottomBtn) {
+      saveBottomBtn.addEventListener('click', () => showToast("Profile identity saved! Nav avatar and chat co-pilot synced."));
+    }
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', () => showToast("Reverted pending customisation changes."));
+    }
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => showToast("Restored avatar to campus default profile."));
+    }
+    if (randomiseBtn) {
+      randomiseBtn.addEventListener('click', () => {
+        // Randomise a couple elements for delightful feedback
+        const randomTone = toneButtons[Math.floor(Math.random() * toneButtons.length)];
+        if (randomTone) randomTone.click();
+        showToast("Randomised style attributes!");
+      });
+    }
+  })();
+</script></div></main><footer class="w-full bg-surface-container-lowest py-space-lg shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-[1200px] mx-auto px-gutter flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><span>© 2025 StudyForge AI. Rigorous Academic Computing Sanctuary.</span><span>CS-2025 Cohort • ASHIEY Engine v4.2</span></div></footer></body></html>

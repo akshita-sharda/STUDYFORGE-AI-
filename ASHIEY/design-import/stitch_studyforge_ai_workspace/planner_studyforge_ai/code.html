@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#c9bfff","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#004881","on-secondary-fixed-variant":"#00513a","on-tertiary-fixed":"#001c38","tertiary-container":"#3b75b6","on-background":"#1c1a27","surface-bright":"#fcf8ff","on-error-container":"#93000a","secondary-container":"#a7f2d0","tertiary-fixed-dim":"#a2c9ff","secondary-fixed":"#a7f2d0","inverse-on-surface":"#f4eeff","tertiary-fixed":"#d3e4ff","surface-variant":"#e5e0f3","on-secondary":"#ffffff","inverse-surface":"#312f3d","on-primary-fixed-variant":"#473698","error":"#ba1a1a","primary-container":"#7364c7","on-primary-container":"#fcf7ff","on-primary":"#ffffff","primary":"#5a4bac","secondary":"#1c6b50","on-surface-variant":"#484552","outline-variant":"#c9c4d4","surface-tint":"#5f4fb1","surface-container-high":"#ebe5f9","surface-container-low":"#f7f1ff","on-tertiary-container":"#f8f9ff","on-secondary-fixed":"#002115","on-error":"#ffffff","background":"#fcf8ff","secondary-fixed-dim":"#8bd5b5","on-surface":"#1c1a27","on-secondary-container":"#247156","surface-dim":"#dcd7ea","primary-fixed":"#e5deff","surface-container-lowest":"#ffffff","inverse-primary":"#c9bfff","error-container":"#ffdad6","on-primary-fixed":"#1a0063","surface-container":"#f1ebff","tertiary":"#1a5c9b","surface-container-highest":"#e5e0f3","outline":"#797583","surface":"#fcf8ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","margin":"2.5rem"},"fontFamily":{"code-inline":["JetBrains Mono"],"body-md":["Geist"],"headline-lg":["Geist"],"code-block":["JetBrains Mono"],"headline-md":["Geist"],"label-sm":["JetBrains Mono"],"headline-sm":["Geist"],"display":["Geist"],"label-md":["JetBrains Mono"],"body-lg":["Geist"],"body-sm":["Geist"],"headline-lg-mobile":["Geist"]},"fontSize":{"code-inline":["0.875rem",{"lineHeight":"1.4","letterSpacing":"-0.01em","fontWeight":"400"}],"body-md":["0.9375rem",{"lineHeight":"1.55","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg":["2.25rem",{"lineHeight":"1.2","letterSpacing":"-0.025em","fontWeight":"600"}],"code-block":["0.8125rem",{"lineHeight":"1.6","letterSpacing":"0","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.3","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"1.2","letterSpacing":"0.06em","fontWeight":"500"}],"headline-sm":["1.25rem",{"lineHeight":"1.4","letterSpacing":"-0.015em","fontWeight":"500"}],"display":["3rem",{"lineHeight":"1.15","letterSpacing":"-0.03em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.6","letterSpacing":"-0.01em","fontWeight":"400"}],"body-sm":["0.8125rem",{"lineHeight":"1.5","letterSpacing":"0","fontWeight":"400"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"1.25","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 max-w-[1200px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm shrink-0"><img alt="ASHIEY Companion Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xu5aIzMDWP0j8uXwVyrgxd5wpt6RtM9zpdYmze3U4qdvw4k46sbT_kyqMYlIKvEnKBMP07Qmjm3Qu-tuOjXyMJ0ZI7-CbkBvG8-9TbBLpbDM8fK81dkHfmXJOI3BJshEppBdDNQBjRL2KU-uuYHwbHRuy7XEOYZl0FTObLh_8wukcyHa25fsoQd7aPCGndOblgfLVKfmOqVerjac3QBT9v1TKAbthxVK78P7UuTn673gb5T9rVnzu8G7S3"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">StudyForge AI</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed tracking-wider uppercase">ASHIEY</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">BTech CS Academic Workspace</span></div></div><nav class="hidden md:flex items-center p-1 rounded-full bg-surface-container-low shadow-[0_1px_3px_rgba(41,39,53,0.03)]" data-active-classes="bg-primary text-on-primary font-medium"><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="ask-ashiey" href="#">Ask ASHIEY</a><a aria-current="page" class="h-9 px-4 flex items-center rounded-full transition-colors bg-primary text-on-primary font-medium" data-path="planner" href="#">Planner</a><a class="h-9 px-4 flex items-center rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" data-path="library" href="#">Library</a><div class="relative group"><button aria-expanded="false" aria-haspopup="true" class="h-9 px-3.5 flex items-center gap-1 rounded-full text-on-surface-variant font-body-md text-body-sm hover:text-on-surface transition-colors" type="button"><span>Study Tools</span><span class="material-symbols-outlined text-[18px]">expand_more</span></button><div class="absolute left-0 top-full mt-2 w-56 p-1.5 rounded-xl bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(41,39,53,0.12),0_4px_12px_-2px_rgba(41,39,53,0.04)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 z-50"><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="flashcards" href="#">Flashcards</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="practice-quizzes" href="#">Practice Quizzes</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="revision-tracker" href="#">Revision Tracker</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="progress-analytics" href="#">Progress Analytics</a></div></div></nav><div class="flex items-center gap-space-sm shrink-0"><button aria-label="Toggle Light and Dark Mode" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">routine</span></button><div class="relative group"><button aria-expanded="false" aria-haspopup="true" class="flex items-center p-0.5 rounded-full hover:ring-2 hover:ring-primary-container/30 transition-all" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARhpAh-iMsLiqCmR6vA5J3SSrxMevbUfhOJs1291rwm8Hbnxd60orj2QHK0AUv3a3vyTBjYE-gfFD0-Pr2yJdQ6_bayCK5fHX0dSsrnOZBcejrf5L3204VH8NHomFSRYG_mWO56_FlyfOHIoeW2kAqRMgbpDiFjXG2jyP1JhW6irC8uwbrfyF411F48ivaMwbyYIfco-g7mHYWlG1QLk0vTsYI9nYC_jwk6r57BJ4iYKR-etJxfq0qew"/></button><div class="absolute right-0 top-full mt-2 w-48 p-1.5 rounded-xl bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(41,39,53,0.12),0_4px_12px_-2px_rgba(41,39,53,0.04)] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 z-50"><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="my-profile" href="#">My Profile</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="edit-avatar" href="#">Edit Avatar</a><a class="flex items-center px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-sm transition-colors" data-path="preferences" href="#">Preferences</a><div class="h-[1px] bg-surface-container-high my-1"></div><a class="flex items-center px-3 py-2 rounded-lg text-error hover:bg-error-container/20 font-body-md text-body-sm transition-colors" data-path="login" href="#">Sign Out</a></div></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="max-w-[1200px] mx-auto px-gutter"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Planner Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-lg pb-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<span>Semester V</span>
+<span>•</span>
+<span>Academic Year 2024-25</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">My Planner</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Assignments, lab submissions, mid-term viva, and revision milestones.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- View Switcher Capsule -->
+<div class="p-1 rounded-full bg-surface-container-low shadow-sm flex items-center">
+<button class="h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5" id="view-list" onclick="setView('list')">
+<span class="material-symbols-outlined text-[17px]">format_list_bulleted</span>
+<span>List View</span>
+</button>
+<button class="h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5" id="view-cal" onclick="setView('cal')">
+<span class="material-symbols-outlined text-[17px]">calendar_today</span>
+<span>Calendar</span>
+</button>
+</div>
+<!-- Add New Task CTA -->
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary-container font-body-md text-body-sm font-medium shadow-md hover:opacity-95 transition-all flex items-center gap-1.5" onclick="toggleModal(true)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Task</span>
+</button>
+</div>
+</header>
+<!-- ASHIEY Proactive Adaptive Suggestion Drawer -->
+<section class="mt-space-sm mb-space-lg rounded-xl p-space-md bg-surface-container-low shadow-sm relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">ASHIEY Cadence Engine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container-high">OS Mid-term Gap</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-normal">
+            You have <strong class="font-semibold text-primary">8 topics</strong> in Operating Systems due for revision before Friday. Would you like to schedule a 45-minute focused flashcard sprint?
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end lg:self-center">
+<button class="h-8 px-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-colors" onclick="dismissSuggestion(this)">
+          Dismiss
+        </button>
+<button class="h-8 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity flex items-center gap-1" onclick="acceptSuggestion(this)">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Schedule Sprint</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filters Row -->
+<div class="space-y-space-sm mb-space-lg">
+<!-- Primary Status Tabs -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-primary text-on-primary shadow-sm" onclick="filterByStatus('all', this)">All (7)</button>
+<button class="status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:text-on-surface" onclick="filterByStatus('today', this)">Today (2)</button>
+<button class="status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:text-on-surface" onclick="filterByStatus('upcoming', this)">Upcoming (4)</button>
+<button class="status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:text-on-surface" onclick="filterByStatus('overdue', this)">Overdue (0)</button>
+<button class="status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:text-on-surface" onclick="filterByStatus('completed', this)">Completed (12)</button>
+</div>
+<!-- Secondary Contextual Filters & Metrics Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Subject Filter Dropdown -->
+<div class="relative">
+<select class="appearance-none h-8 pl-3 pr-8 rounded-full bg-surface-container-lowest shadow-sm text-on-surface font-label-md text-label-md cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary" id="subject-filter" onchange="applyFilters()">
+<option value="all">Subject: All Modules</option>
+<option value="CS301">CS301 Operating Systems</option>
+<option value="CS302">CS302 Design & Analysis of Algorithms</option>
+<option value="CS303">CS303 Database Management Systems</option>
+<option value="CS304">CS304 Computer Networks</option>
+<option value="CS305">CS305 Web Technologies</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-2 pointer-events-none">expand_more</span>
+</div>
+<!-- Task Type Filter Dropdown -->
+<div class="relative">
+<select class="appearance-none h-8 pl-3 pr-8 rounded-full bg-surface-container-lowest shadow-sm text-on-surface font-label-md text-label-md cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary" id="type-filter" onchange="applyFilters()">
+<option value="all">Type: All Categories</option>
+<option value="assignment">Assignments</option>
+<option value="exam">Exams & Viva</option>
+<option value="revision">Revision</option>
+<option value="project">Project Milestones</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-2 pointer-events-none">expand_more</span>
+</div>
+<button class="h-8 px-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-low font-label-sm text-label-sm flex items-center gap-1 transition-colors" onclick="resetFilters()">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+<!-- Quick Semester Metric Indicator -->
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Week 8 of 16
+        </span>
+<span>•</span>
+<span>Lab Submission Cycle B</span>
+</div>
+</div>
+</div>
+<!-- Task Board Main Container -->
+<div class="space-y-space-xl" id="planner-content">
+<!-- GROUP 1: DUE TODAY -->
+<section class="task-group space-y-space-sm" data-group="today">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight">Due Today</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">Thursday, Oct 24</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Critical Tasks</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- TASK 1: DAA Lab -->
+<article class="task-card group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-due="today" data-subject="CS302" data-type="assignment">
+<div class="flex items-start gap-space-md min-w-0">
+<!-- Custom Checkbox -->
+<button aria-label="Mark task complete" class="task-check mt-1 w-5 h-5 rounded flex items-center justify-center bg-surface-container-high hover:bg-primary/20 text-transparent transition-colors shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[16px] text-on-primary">check</span>
+</button>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Badges -->
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">CS302 • DAA</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Assignment</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  High Priority
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Due 5:00 PM</span>
+</div>
+<h3 class="task-title font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight truncate">
+                DAA Lab Exercise 5: 0/1 Knapsack Problem Branch & Bound
+              </h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+                  Implement in C++ & submit report on Google Classroom
+                </span>
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+                  In Progress (3/4 test cases passed)
+                </span>
+</div>
+</div>
+</div>
+<!-- Quick Actions & Floating Controls -->
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-medium md:opacity-100 transition-opacity">Lab Report #5</span>
+<div class="flex items-center opacity-0 group-hover:opacity-100 transition-opacity gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Ask ASHIEY Co-pilot">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Edit Item">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container/30 transition-colors" onclick="deleteTask(this)" title="Remove">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- TASK 2: OS Revision -->
+<article class="task-card group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-due="today" data-subject="CS301" data-type="revision">
+<div class="flex items-start gap-space-md min-w-0">
+<button aria-label="Mark task complete" class="task-check mt-1 w-5 h-5 rounded flex items-center justify-center bg-surface-container-high hover:bg-primary/20 text-transparent transition-colors shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[16px] text-on-primary">check</span>
+</button>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">CS301 • OS</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Revision</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-medium">Medium Priority</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Due 9:00 PM</span>
+</div>
+<h3 class="task-title font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight truncate">
+                Operating Systems Chapter 8 Memory Management Paging Review
+              </h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">notes</span>
+                  Review TLB numerical problems & Multi-level Paging before quiz
+                </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                  Pending
+                </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-medium">Silberschatz pp. 315-340</span>
+<div class="flex items-center opacity-0 group-hover:opacity-100 transition-opacity gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Launch Formula Visualizer">
+<span class="material-symbols-outlined text-[18px]">functions</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Edit Item">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container/30 transition-colors" onclick="deleteTask(this)" title="Remove">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- GROUP 2: UPCOMING THIS WEEK -->
+<section class="task-group space-y-space-sm" data-group="upcoming">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight">Upcoming This Week</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">Oct 25 – Oct 28</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Milestones</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- TASK 3: DBMS Lab Viva -->
+<article class="task-card group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-due="upcoming" data-subject="CS303" data-type="exam">
+<div class="flex items-start gap-space-md min-w-0">
+<button aria-label="Mark task complete" class="task-check mt-1 w-5 h-5 rounded flex items-center justify-center bg-surface-container-high hover:bg-primary/20 text-transparent transition-colors shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[16px] text-on-primary">check</span>
+</button>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">CS303 • DBMS</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-medium">Exam / Viva</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  High Priority
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Friday, Oct 25 • 10:30 AM</span>
+</div>
+<h3 class="task-title font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight truncate">
+                Database Management Systems Lab Viva Preparation
+              </h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">database</span>
+                  Normalisation (1NF to BCNF), B+ Tree indexing, Transaction ACID properties
+                </span>
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+                  Prof. R. Narayanan • Lab Hall 4
+                </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-medium">20 Viva Weightage</span>
+<div class="flex items-center opacity-0 group-hover:opacity-100 transition-opacity gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Launch Mock Viva AI">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Edit Item">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container/30 transition-colors" onclick="deleteTask(this)" title="Remove">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- TASK 4: Computer Networks Project -->
+<article class="task-card group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-due="upcoming" data-subject="CS304" data-type="project">
+<div class="flex items-start gap-space-md min-w-0">
+<button aria-label="Mark task complete" class="task-check mt-1 w-5 h-5 rounded flex items-center justify-center bg-surface-container-high hover:bg-primary/20 text-transparent transition-colors shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[16px] text-on-primary">check</span>
+</button>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">CS304 • CN</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">Project Milestone</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant">Normal Priority</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Monday, Oct 28 • 11:59 PM</span>
+</div>
+<h3 class="task-title font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight truncate">
+                Computer Networks Socket Programming Project Milestone 1
+              </h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">lan</span>
+                  Multi-client TCP chat server setup using POSIX threads in Linux
+                </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+                  Pair with Aryan K.
+                </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-medium">GitHub Repository #milestone-1</span>
+<div class="flex items-center opacity-0 group-hover:opacity-100 transition-opacity gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Open Code Sandbox">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Edit Item">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container/30 transition-colors" onclick="deleteTask(this)" title="Remove">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- GROUP 3: COMPLETED RECENTLY (Collapsible) -->
+<section class="task-group space-y-space-sm pt-space-xs" data-group="completed">
+<div class="flex items-center justify-between pb-1 cursor-pointer select-none" onclick="toggleCompletedAccordion()">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant transition-transform duration-200" id="accordion-arrow">expand_more</span>
+<h2 class="font-headline-sm text-headline-sm font-medium text-on-surface-variant tracking-tight">Completed Recently</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">2 Archival Items</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Click to toggle</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm" id="completed-container">
+<!-- Completed Item 1 -->
+<article class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md opacity-70 hover:opacity-100 transition-opacity" data-subject="MA301" data-type="assignment">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="mt-1 w-5 h-5 rounded flex items-center justify-center bg-secondary text-on-secondary shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="space-y-1 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant">MA301 • Maths III</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through">Assignment 2</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Turned in yesterday</span>
+</div>
+<h3 class="font-body-lg text-body-md font-medium text-on-surface line-through">
+                Fourier Transforms & Boundary Value Problems Assignment 2
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Graded: 19.5/20 • Verified by Dr. M. Sen</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-medium">Submitted & Signed</span>
+</div>
+</article>
+<!-- Completed Item 2 -->
+<article class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md opacity-70 hover:opacity-100 transition-opacity" data-subject="CS306" data-type="assignment">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="mt-1 w-5 h-5 rounded flex items-center justify-center bg-secondary text-on-secondary shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="space-y-1 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant">CS306 • OOP Java</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through">Lab Submission</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Completed 3 days ago</span>
+</div>
+<h3 class="font-body-lg text-body-md font-medium text-on-surface line-through">
+                Object Oriented Programming Java Lab 3: Multithreading & Concurrency
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Automated test harness: 100% test pass rate</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-medium">Verified Clean Build</span>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Calendar View State (Initially Hidden) -->
+<div class="hidden mt-space-md space-y-space-md" id="calendar-view-container">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">October 2024 • Academic Schedule</span>
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-primary-fixed text-on-primary-fixed">4 Deadlines</span>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed">2 Lab Tests</span>
+</div>
+</div>
+<!-- Mini Calendar Matrix -->
+<div class="grid grid-cols-7 gap-2 p-space-md rounded-xl bg-surface-container-lowest shadow-sm text-center">
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Mon</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Tue</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Wed</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Thu</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Fri</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Sat</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant py-1">Sun</div>
+<!-- Days Row Mock -->
+<div class="h-20 p-1.5 rounded-lg bg-surface-container-low flex flex-col items-start text-on-surface-variant font-label-sm text-label-sm">
+<span>21</span>
+</div>
+<div class="h-20 p-1.5 rounded-lg bg-surface-container-low flex flex-col items-start text-on-surface-variant font-label-sm text-label-sm">
+<span>22</span>
+</div>
+<div class="h-20 p-1.5 rounded-lg bg-surface-container-low flex flex-col items-start text-on-surface-variant font-label-sm text-label-sm">
+<span>23</span>
+<span class="mt-1 px-1 py-0.5 rounded bg-surface-container-high text-[10px] truncate w-full text-left">Maths III Assign</span>
+</div>
+<!-- Today -->
+<div class="h-20 p-1.5 rounded-lg bg-primary-fixed flex flex-col items-start text-on-primary-fixed font-label-sm text-label-sm">
+<span class="font-bold">24 Today</span>
+<span class="mt-1 px-1 py-0.5 rounded bg-error-container text-on-error-container text-[10px] truncate w-full text-left font-semibold">DAA 0/1 Knapsack</span>
+<span class="mt-0.5 px-1 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-[10px] truncate w-full text-left">OS Paging Rev</span>
+</div>
+<div class="h-20 p-1.5 rounded-lg bg-surface-container-low flex flex-col items-start text-on-surface font-label-sm text-label-sm">
+<span>25</span>
+<span class="mt-1 px-1 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] truncate w-full text-left font-medium">DBMS Viva 10:30A</span>
+</div>
+<div class="h-20 p-1.5 rounded-lg bg-surface-container-low flex flex-col items-start text-on-surface-variant font-label-sm text-label-sm">
+<span>26</span>
+</div>
+<div class="h-20 p-1.5 rounded-lg bg-surface-container-low flex flex-col items-start text-on-surface-variant font-label-sm text-label-sm">
+<span>27</span>
+</div>
+</div>
+</div>
+<!-- Add New Task Modal (Backdrop + Card) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-gutter bg-on-surface/40 backdrop-blur-sm hidden" id="add-modal">
+<div class="w-full max-w-lg rounded-2xl bg-surface-container-lowest p-space-lg shadow-xl relative animate-in fade-in duration-150">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Schedule Academic Task</h3>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="toggleModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="space-y-space-md pt-space-xs" id="new-task-form" onsubmit="handleAddTask(event)">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Task Title</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40" id="modal-task-title" placeholder="e.g. Computer Networks Wireshark Packet Analysis" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Course Code</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40" id="modal-task-course">
+<option value="CS301">CS301 • Operating Systems</option>
+<option value="CS302">CS302 • DAA</option>
+<option value="CS303">CS303 • DBMS</option>
+<option value="CS304">CS304 • Computer Networks</option>
+<option value="CS305">CS305 • Web Technologies</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Category</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40" id="modal-task-type">
+<option value="assignment">Assignment</option>
+<option value="exam">Exam • Viva</option>
+<option value="revision">Revision</option>
+<option value="project">Project Milestone</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Due Date</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40" id="modal-task-date" required="" type="date" value="2024-10-24"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Priority</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40" id="modal-task-priority">
+<option value="high">High Priority</option>
+<option value="medium">Medium Priority</option>
+<option value="normal">Normal</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Academic Notes & Scope</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40" id="modal-task-notes" placeholder="Submission portal, lab partner, or chapter references..." rows="2"></textarea>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-space-xs">
+<button class="h-9 px-4 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md text-body-sm transition-colors" onclick="toggleModal(false)" type="button">
+            Cancel
+          </button>
+<button class="h-9 px-5 rounded-full bg-primary text-on-primary font-body-md text-body-sm font-medium shadow-sm hover:opacity-90 transition-opacity" type="submit">
+            Save Task
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  let activeStatusFilter = 'all';
+
+  function setView(view) {
+    const listBtn = document.getElementById('view-list');
+    const calBtn = document.getElementById('view-cal');
+    const listContainer = document.getElementById('planner-content');
+    const calContainer = document.getElementById('calendar-view-container');
+
+    if (view === 'list') {
+      listBtn.className = 'h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5';
+      calBtn.className = 'h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5';
+      listContainer.classList.remove('hidden');
+      calContainer.classList.add('hidden');
+    } else {
+      calBtn.className = 'h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5';
+      listBtn.className = 'h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5';
+      listContainer.classList.add('hidden');
+      calContainer.classList.remove('hidden');
+    }
+  }
+
+  function filterByStatus(status, element) {
+    activeStatusFilter = status;
+    document.querySelectorAll('.status-tab').forEach(tab => {
+      tab.className = 'status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:text-on-surface';
+    });
+    element.className = 'status-tab h-8 px-3.5 rounded-full font-label-md text-label-md font-medium transition-colors bg-primary text-on-primary shadow-sm';
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const subjectFilter = document.getElementById('subject-filter').value;
+    const typeFilter = document.getElementById('type-filter').value;
+    const cards = document.querySelectorAll('.task-card');
+    const groups = document.querySelectorAll('.task-group');
+
+    cards.forEach(card => {
+      const matchSubject = subjectFilter === 'all' || card.getAttribute('data-subject') === subjectFilter;
+      const matchType = typeFilter === 'all' || card.getAttribute('data-type') === typeFilter;
+      const cardDue = card.getAttribute('data-due');
+
+      let matchStatus = true;
+      if (activeStatusFilter === 'today') matchStatus = cardDue === 'today';
+      else if (activeStatusFilter === 'upcoming') matchStatus = cardDue === 'upcoming';
+      else if (activeStatusFilter === 'overdue') matchStatus = false;
+      else if (activeStatusFilter === 'completed') matchStatus = false;
+
+      if (matchSubject && matchType && matchStatus) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Special treatment for completed group
+    const completedGroup = document.querySelector('[data-group="completed"]');
+    if (completedGroup) {
+      if (activeStatusFilter === 'today' || activeStatusFilter === 'upcoming' || activeStatusFilter === 'overdue') {
+        completedGroup.classList.add('hidden');
+      } else {
+        completedGroup.classList.remove('hidden');
+      }
+    }
+  }
+
+  function resetFilters() {
+    document.getElementById('subject-filter').value = 'all';
+    document.getElementById('type-filter').value = 'all';
+    const allTab = document.querySelectorAll('.status-tab')[0];
+    filterByStatus('all', allTab);
+  }
+
+  function toggleTask(button) {
+    const isCompleted = button.getAttribute('data-done') === 'true';
+    const card = button.closest('.task-card');
+    const title = card.querySelector('.task-title');
+
+    if (!isCompleted) {
+      button.setAttribute('data-done', 'true');
+      button.classList.remove('bg-surface-container-high', 'hover:bg-primary/20', 'text-transparent');
+      button.classList.add('bg-secondary', 'text-on-secondary');
+      title.classList.add('line-through', 'text-on-surface-variant');
+      card.classList.add('opacity-60');
+    } else {
+      button.setAttribute('data-done', 'false');
+      button.classList.add('bg-surface-container-high', 'hover:bg-primary/20', 'text-transparent');
+      button.classList.remove('bg-secondary', 'text-on-secondary');
+      title.classList.remove('line-through', 'text-on-surface-variant');
+      card.classList.remove('opacity-60');
+    }
+  }
+
+  function deleteTask(button) {
+    const card = button.closest('.task-card');
+    if (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.98)';
+      setTimeout(() => card.remove(), 180);
+    }
+  }
+
+  function toggleCompletedAccordion() {
+    const container = document.getElementById('completed-container');
+    const arrow = document.getElementById('accordion-arrow');
+    if (container.classList.contains('hidden')) {
+      container.classList.remove('hidden');
+      arrow.style.transform = 'rotate(0deg)';
+    } else {
+      container.classList.add('hidden');
+      arrow.style.transform = 'rotate(-90deg)';
+    }
+  }
+
+  function dismissSuggestion(btn) {
+    const drawer = btn.closest('section');
+    drawer.style.opacity = '0';
+    drawer.style.transform = 'translateY(-6px)';
+    drawer.style.transition = 'all 0.25s ease';
+    setTimeout(() => drawer.remove(), 250);
+  }
+
+  function acceptSuggestion(btn) {
+    btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span><span>Scheduled!</span>`;
+    btn.classList.add('bg-secondary');
+    setTimeout(() => {
+      dismissSuggestion(btn);
+    }, 1000);
+  }
+
+  function toggleModal(open) {
+    const modal = document.getElementById('add-modal');
+    if (open) {
+      modal.classList.remove('hidden');
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function handleAddTask(e) {
+    e.preventDefault();
+    const title = document.getElementById('modal-task-title').value;
+    const course = document.getElementById('modal-task-course').value;
+    const type = document.getElementById('modal-task-type').value;
+    const notes = document.getElementById('modal-task-notes').value || 'Scheduled via StudyForge Planner';
+
+    const group = document.querySelector('[data-group="today"] .grid');
+    if (group && title) {
+      const newCard = document.createElement('article');
+      newCard.className = 'task-card group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md';
+      newCard.setAttribute('data-subject', course);
+      newCard.setAttribute('data-type', type);
+      newCard.setAttribute('data-due', 'today');
+
+      newCard.innerHTML = `
+        <div class="flex items-start gap-space-md min-w-0">
+          <button onclick="toggleTask(this)" class="task-check mt-1 w-5 h-5 rounded flex items-center justify-center bg-surface-container-high hover:bg-primary/20 text-transparent transition-colors shrink-0" aria-label="Mark complete">
+            <span class="material-symbols-outlined text-[16px] text-on-primary">check</span>
+          </button>
+          <div class="space-y-1.5 min-w-0">
+            <div class="flex flex-wrap items-center gap-space-xs">
+              <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">${course}</span>
+              <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">${type}</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Due Today • 11:59 PM</span>
+            </div>
+            <h3 class="task-title font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight truncate">${title}</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px] text-primary">notes</span>
+              ${notes}
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+          <span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-medium">New Entry</span>
+          <div class="flex items-center opacity-0 group-hover:opacity-100 transition-opacity gap-1">
+            <button onclick="deleteTask(this)" class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container/30 transition-colors" title="Remove">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        </div>
+      `;
+      group.prepend(newCard);
+    }
+    toggleModal(false);
+    document.getElementById('new-task-form').reset();
+  }
+</script></div></main><footer class="w-full bg-surface-container-lowest py-space-lg shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-[1200px] mx-auto px-gutter flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><span>© 2025 StudyForge AI. Rigorous Academic Computing Sanctuary.</span><span>CS-2025 Cohort • ASHIEY Engine v4.2</span></div></footer></body></html>

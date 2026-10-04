@@ -1,0 +1,25 @@
+"use client";
+import { useEffect, useState } from "react";
+import { API, studyApi, Subject } from "./study-api";
+type Doc = { id: string; filename: string; subject_id: string | null };
+export default function Library({ token, onStudy }: { token: string; onStudy: (id: string, filename: string) => void }) {
+  const [subjects, setSubjects] = useState<Subject[]>([]); const [docs, setDocs] = useState<Doc[]>([]);
+  const [filter, setFilter] = useState("all"); const [name, setName] = useState(""); const [search, setSearch] = useState("");
+  const [busy, setBusy] = useState(false); const [error, setError] = useState(""); const [notice, setNotice] = useState("");
+  async function load() { const d = await studyApi(token, "/library"); setSubjects(d.subjects); setDocs(d.documents); }
+  useEffect(() => { load().catch(e => setError(e.message)); }, [token]);
+  async function run(action: () => Promise<void>) { setBusy(true); setError(""); try { await action(); } catch(e) { setError(e instanceof Error ? e.message : "Request failed."); } finally { setBusy(false); } }
+  async function upload(file?: File) {
+    if (!file) return;
+    await run(async () => { const form = new FormData(); form.append("file", file); const r = await fetch(`${API}/api/documents/upload`, { method: "POST", headers: { Authorization: `Bearer ${token}` }, body: form }); const d = await r.json(); if (!r.ok) throw new Error(d.detail || "Upload failed."); await load(); if (filter !== "all" && filter !== "unfiled") { await studyApi(token, `/documents/${d.document_id}/subject`, "PUT", { subject_id: filter }); await load(); } setNotice(`${file.name} is ready to study.`); });
+  }
+  async function download(doc: Doc) { await run(async () => { const r = await fetch(`${API}/api/study/documents/${doc.id}/file`, { headers: { Authorization: `Bearer ${token}` } }); if (!r.ok) throw new Error("Could not download this PDF."); const url = URL.createObjectURL(await r.blob()); const a = document.createElement("a"); a.href = url; a.download = doc.filename; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }); }
+  return <section className="content-card"><span className="kicker">YOUR SUBJECT LIBRARY</span><h2>Notes, organised.</h2><p>Choose a subject, upload notes, and return to them whenever you study.</p>
+    <form className="study-row" onSubmit={e => { e.preventDefault(); run(async () => { await studyApi(token, "/subjects", "POST", { name }); setName(""); await load(); }); }}><input aria-label="New subject" value={name} maxLength={120} onChange={e => setName(e.target.value)} placeholder="New subject, e.g. DBMS" required /><button className="button" disabled={busy || !name.trim()}>Add subject</button></form>
+    {!subjects.length && <div className="study-row">{["DSA", "DBMS", "Operating Systems", "Computer Networks"].map(n => <button className="button secondary" key={n} disabled={busy} onClick={() => run(async () => { await studyApi(token, "/subjects", "POST", { name: n }); await load(); })}>+ {n}</button>)}</div>}
+    <div className="study-row"><select aria-label="Filter subject" value={filter} onChange={e => setFilter(e.target.value)}><option value="all">All subjects</option><option value="unfiled">Unfiled notes</option>{subjects.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}</select><input aria-label="Search notes" placeholder="Search notes…" value={search} onChange={e => setSearch(e.target.value)} /><label className="upload-button">Upload PDF<input type="file" accept="application/pdf" disabled={busy} onChange={e => { upload(e.target.files?.[0]); e.target.value = ""; }} /></label></div>
+    {busy && <p role="status">Saving changes…</p>}{error && <p className="error" role="alert">{error}</p>}{notice && <p role="status">{notice}</p>}
+    <div className="library-list">{docs.filter(d => (filter === "all" || (filter === "unfiled" ? !d.subject_id : d.subject_id === filter)) && d.filename.toLowerCase().includes(search.toLowerCase())).map(d => <article className="study-item" key={d.id}><h3>{d.filename}</h3><div className="study-row"><select aria-label={`Subject for ${d.filename}`} value={d.subject_id || ""} disabled={busy} onChange={e => run(async () => { await studyApi(token, `/documents/${d.id}/subject`, "PUT", { subject_id: e.target.value || null }); await load(); })}><option value="">Unfiled</option>{subjects.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}</select><button className="button" onClick={() => onStudy(d.id, d.filename)}>Study these notes</button><button className="button secondary" disabled={busy} onClick={() => download(d)}>Download PDF</button><button className="button secondary" disabled={busy} onClick={()=>{if(window.confirm("Delete this PDF and its generated study material? Saved chat text will remain."))run(async()=>{await studyApi(token,`/documents/${d.id}`,"DELETE");await load();setNotice("Document deleted.")})}}>Delete PDF</button></div></article>)}</div>
+    {!docs.length && <p className="empty">Your saved PDFs will appear here. Add your first subject and upload some notes.</p>}
+  </section>;
+}

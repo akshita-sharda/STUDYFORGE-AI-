@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="ashieyGrad" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9E91EC" />
+      <stop offset="50%" stop-color="#7B6BC7" />
+      <stop offset="100%" stop-color="#5544A8" />
+    </linearGradient>
+    <linearGradient id="pearlShine" x1="14" y1="12" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#D9D4F8" stop-opacity="0.2" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background gentle rounded container -->
+  <rect x="2" y="2" width="44" height="44" rx="14" fill="#F4F1FB" stroke="#E5DFF4" stroke-width="1.5" />
+  <!-- Sculpted geometric orbital companion symbol: intersecting elegant pearl rings and core locus -->
+  <circle cx="24" cy="24" r="13" stroke="url(#ashieyGrad)" stroke-width="2.5" stroke-dasharray="32 10" />
+  <circle cx="24" cy="24" r="7.5" fill="url(#ashieyGrad)" filter="url(#softGlow)" />
+  <circle cx="21" cy="21" r="2.5" fill="#FFFFFF" opacity="0.8" />
+  <!-- Restrained sage mint accent satellite -->
+  <circle cx="34" cy="15" r="3.2" fill="#52B28B" stroke="#FFFFFF" stroke-width="1.2" />
+</svg>
