@@ -7,6 +7,14 @@ both are ready, and opens StudyForge at http://127.0.0.1:3000.
 
 Double-click `STOP-STUDYFORGE.cmd` when you are finished.
 
+## Run from VS Code
+
+Open this repository root in VS Code (the folder containing this README).
+Press `Ctrl+Shift+B` and select **Start StudyForge AI**. The task starts the
+backend and website and opens the browser. To stop them, choose **Terminal >
+Run Task > Stop StudyForge AI**. You do not need to activate a Python environment
+or type a folder path in the terminal.
+
 From the VS Code PowerShell terminal, run these commands from this repository
 (not from an older `B:\STUDYFORGE_AI` copy):
 
