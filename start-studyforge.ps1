@@ -4,11 +4,42 @@ $ErrorActionPreference = "Stop"
 $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $backendRoot = Join-Path $projectRoot "backend"
 $frontendRoot = Join-Path $projectRoot "frontend"
-$pythonPath = Join-Path $backendRoot ".venv\Scripts\python.exe"
+$venvPythonPath = Join-Path $backendRoot ".venv\Scripts\python.exe"
 $runRoot = Join-Path $projectRoot ".studyforge-run"
 
-if (-not (Test-Path -LiteralPath $pythonPath)) {
-    throw "Backend environment is missing. Expected: $pythonPath"
+$systemPythonPath = (Get-Command py.exe -ErrorAction Stop).Source
+$pythonPath = $null
+
+foreach ($candidate in @($venvPythonPath, $systemPythonPath)) {
+    if (-not (Test-Path -LiteralPath $candidate)) {
+        continue
+    }
+    $candidateReady = $false
+    try {
+        & $candidate -c "import fastapi, uvicorn, fitz, sklearn" 2>$null
+        $candidateReady = $LASTEXITCODE -eq 0
+    } catch {
+        # A stale virtual environment can point at a removed Python install.
+        # Ignore it and try the system Python below.
+        $candidateReady = $false
+    }
+    if ($candidateReady) {
+        $pythonPath = $candidate
+        break
+    }
+}
+
+if (-not $pythonPath) {
+    $pythonPath = $systemPythonPath
+    Write-Host "  Installing backend requirements..." -ForegroundColor Yellow
+    & $pythonPath -m pip install -r (Join-Path $backendRoot "requirements.txt")
+    if ($LASTEXITCODE -ne 0) {
+        throw "Could not install the backend requirements. Run the command again after checking your internet connection."
+    }
+}
+
+if ($pythonPath -eq $systemPythonPath -and $venvPythonPath -ne $systemPythonPath) {
+    Write-Host "  Using the system Python because the project environment is unavailable or incomplete." -ForegroundColor Yellow
 }
 
 $npmCommand = Get-Command npm.cmd -ErrorAction Stop

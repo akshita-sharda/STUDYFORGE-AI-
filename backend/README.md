@@ -11,11 +11,11 @@ pastel theme. Uploaded documents are associated with the logged-in student.
 ## Run in VS Code
 
 ```powershell
-cd B:\STUDYFORGE_AI\backend
+cd "C:\Users\akshita sharda\Documents\ChatGPT\STUDYFORGE_AI\backend"
 py -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload --port 8000
 ```
 
 Open http://127.0.0.1:8000/docs. Add `GEMINI_API_KEY` to a local `.env` or

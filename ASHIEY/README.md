@@ -1,5 +1,9 @@
 # StudyForge AI
 
+> The current StudyForge project is the repository root, one folder above this
+> legacy compatibility copy. Open `C:\Users\akshita sharda\Documents\ChatGPT\STUDYFORGE_AI`
+> in VS Code and follow its README so you always run the current version.
+
 ## Start everything at once on Windows
 
 Double-click `START-STUDYFORGE.cmd`. It starts the API and website, waits until
