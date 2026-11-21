@@ -184,7 +184,7 @@ Then open **http://localhost:3000** and create your student space.
 
 ```bash
 cd backend
-pytest tests -q        # 39 tests: auth, documents, chat, streaming, planner, quizzes, AI reliability
+python -m pytest tests -q   # 39 tests: auth, documents, chat, streaming, planner, quizzes, AI reliability
 ```
 
 ```bash
