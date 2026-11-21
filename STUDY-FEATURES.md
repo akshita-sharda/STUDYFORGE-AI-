@@ -22,4 +22,4 @@ Backend: from `backend`, run `.\.venv\Scripts\python.exe -m pytest tests -q --ba
 
 Frontend: from `frontend`, run `npm.cmd run build`.
 
-Browser workflow: `node check-study.cjs` from `frontend` (requires a local Playwright installation and Microsoft Edge). The browser script intercepts every API call and does not create a real account, save to the live database or call Gemini. It tests library, revision, saved-chat, code-copy and mobile-layout flows. Screenshots are saved in the ignored `ASHIEY/data` directory.
+Browser workflow: `node check-study.cjs` from `frontend` (requires a local Playwright installation and Microsoft Edge). The browser script intercepts every API call and does not create a real account, save to the live database or call Gemini. It tests library, revision, saved-chat, code-copy and mobile-layout flows. Screenshots are saved in the ignored `data` directory.

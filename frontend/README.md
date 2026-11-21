@@ -3,7 +3,7 @@
 ## Run in VS Code
 
 ```powershell
-cd "C:\Users\akshita sharda\Documents\ChatGPT\STUDYFORGE_AI\frontend"
+cd frontend
 npm.cmd install
 npm.cmd run dev -- --port 3000
 ```

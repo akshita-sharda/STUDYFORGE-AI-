@@ -1,6 +1,6 @@
 # Run ASHIEY locally
 
-Backend (PowerShell, from ASHIEY/backend):
+Backend (PowerShell, from backend/):
 
 ```powershell
 python -m venv .venv
@@ -10,7 +10,7 @@ Copy-Item .env.example .env
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
-Frontend (a second terminal, from ASHIEY/frontend):
+Frontend (a second terminal, from frontend/):
 
 ```powershell
 npm.cmd install

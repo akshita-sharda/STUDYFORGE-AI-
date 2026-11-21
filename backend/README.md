@@ -11,7 +11,7 @@ pastel theme. Uploaded documents are associated with the logged-in student.
 ## Run in VS Code
 
 ```powershell
-cd "C:\Users\akshita sharda\Documents\ChatGPT\STUDYFORGE_AI\backend"
+cd backend
 py -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
