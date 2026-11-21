@@ -3,3 +3,4 @@
 *.pdf binary
 *.docx binary
 *.pptx binary
+docs/** linguist-documentation
